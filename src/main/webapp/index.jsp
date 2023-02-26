@@ -2,6 +2,7 @@
 <html>
 <head>
 <script type="text/javascript" src="js/jquery-3.6.2.js"></script>
+<script type="text/javascript" src="js/debug.js"></script>
 <title>kumichounoHead</title>
 </head>
 <body>
@@ -18,17 +19,7 @@ function moveon(){
 	/* if (answer) window.location = "https://google.com"; */
 	/* window.location = "http://localhost:12345/YDemo/"; */
 }
-function debug(msg){
-	var log = document.getElementById("debuglog1");
-	alert(log);
-	if(!log){
-		log=document.createElement("div");
-/* 		log.id ="debuglog2";
-		log.innerHTML ="<h1>Debug log</h1>" */
-		document.body.appendChild(log);
-	}
-	
-}
+
 function hide(e,reflow){
 	alert(reflow);
 	if(reflow){
@@ -45,6 +36,7 @@ function highlight(e){
 		e.className +="hilite";
 	}
 }
+
 </script>
 </body>
 </html>
