@@ -3,30 +3,20 @@
 <head>
 <script type="text/javascript" src="js/jquery-3.6.2.js"></script>
 <script type="text/javascript" src="js/debug.js"></script>
+<script type="text/javascript" src="js/hide.js"></script>
 <title>kumichounoHead</title>
 </head>
 <body>
 <p>先頭部分</p>
 <p>最後</p>
-<button onclick="moveon()">click event tigger</button>
-<button id="debuglog" class="sdemo" onclick="debug(moveon)">click event tigger2</button>
-<button id="debuglog2" onclick="hide(debuglog2,debuglog)">click event tigger3</button>
-<button id="debuglog3" onclick="highlight(debuglog)">click event tigger4</button>
+<button onclick="hide(this,true);debug('hide button 1');">Hide1</button>
+<button onclick="hide(this);debug('hide button 2');">Hide2</button>
 <script>
 function moveon(){
 	var answer = confirm("Ready to move on?");
 	alert(answer);
 	/* if (answer) window.location = "https://google.com"; */
 	/* window.location = "http://localhost:12345/YDemo/"; */
-}
-
-function hide(e,reflow){
-	alert(reflow);
-	if(reflow){
-		e.style.display = "none"
-	}else{
-		e.style.visibility="hidden";
-	}
 }
 
 function highlight(e){
