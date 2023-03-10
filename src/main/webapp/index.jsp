@@ -8,25 +8,28 @@
 </head>
 <body>
 <p>先頭部分</p>
+<img src="img/wuzhi1.jpg" class="custom-logo ezlazyloaded">
+<img src="img/wuzhi2.jpg" class="custom-logo ezlazyloaded">
+<img src="img/wuzhi3.jpg" class="custom-logo ezlazyloaded">
+<img src="img/wuzhi4.jpg" class="custom-logo ezlazyloaded">
+<img src="img/wuzhi5.jpg" class="custom-logo ezlazyloaded">
+<img src="img/wuzhi6.jpg" class="custom-logo ezlazyloaded">
+<div id="hide button 1">1da</div>
+<div id="hide button 2">2da</div>
 <p>最後</p>
-<button onclick="hide(this,true);debug('hide button 1');">Hide1</button>
-<button onclick="hide(this);debug('hide button 2');">Hide2</button>
 <script>
-function moveon(){
-	var answer = confirm("Ready to move on?");
-	alert(answer);
-	/* if (answer) window.location = "https://google.com"; */
-	/* window.location = "http://localhost:12345/YDemo/"; */
-}
-
-function highlight(e){
-	if(!e.className){
-		e.className = "hilite"
-	}else{
-		e.className +="hilite";
+window.onload = function(){
+	var images= document.getElementsByTagName("img");
+	for(var i=0;i<images.length;i++){
+		var image = images[i];
+		if(image.addEventListener)
+			image.addEventListener("click",hide,false);
+		else
+			image.attachEvent("onclick",hide);
 	}
+	
+	function hide(event) { event.target.style.visibility = "hidden"; }
 }
-
 </script>
 </body>
 </html>

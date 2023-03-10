@@ -1,6 +1,5 @@
 function debug(msg){
 	var log = document.getElementById("debuglog");
-	alert(log);
 	if(!log){
 		log=document.createElement("div");
  		log.id ="debuglog";
