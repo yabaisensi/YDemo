@@ -1,2 +1,2 @@
-345
-23
+databaseName	tableName	lastUpdate	nRows	clusteredIndexSize	sumOfOtherIndexSizes
+mybatis	items	2023/1/16 3:38:01	3	1	0
