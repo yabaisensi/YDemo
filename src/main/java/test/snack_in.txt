@@ -1,3 +1,1 @@
-database_name	table_name	last_update	n_rows	clustered_index_size	sum_of_other_index_sizes
-mybatis	items	2023/1/16 3:38:01	3	1	0
-##
+databaseName	tableName	lastUpdate	nRows	clusteredIndexSize	sumOfOtherIndexSizes
