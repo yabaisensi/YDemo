@@ -1,0 +1,30 @@
+file file = new file(in_file);
+        scanner scanner = new scanner(file);
+        string_buffer sb = new string_buffer();
+        try {
+        	process_builder pb = new process_builder("cmd");
+        	runtime rt = runtime.get_runtime();
+        	rt.exec("notepad \""+in_file+"\"");
+        	system.out.println("press any key to continue while write completely!");
+        	new java.util.scanner(system.in).next_line();
+                while (scanner.has_next_line()){
+            	string line = scanner.next_line();
+        			 line = line.replace_all("([a-z0-9]+)([a-z]+)", "$1_$2").to_upper_case();
+                if (line.equals("##")) {
+                    scanner.close();
+                    break;
+                }
+                line = line+"\r\n";
+                sb.append(line);
+            }
+        } finally {
+        	scanner.close();
+			buffered_writer bwr = new buffered_writer(new file_writer(new file(out_file)));
+			bwr.write(sb.to_string());
+			bwr.flush();
+			bwr.close();
+			process_builder pb = new process_builder("cmd");
+			runtime rt = runtime.get_runtime();
+			pb.start();
+		    string sta_str = "notepad \""+out_file+"\"";
+			rt.exec(sta_str);

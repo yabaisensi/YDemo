@@ -6,9 +6,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class TestCamel {
-	private static final String IN_FILE = "C:\\Users\\Administrator\\Documents\\pleiades-2021-12-java-win-64bit-jre_20220106\\pleiades\\workspace\\YDemo\\src\\main\\java\\test\\camel_in.txt";
-	private static final String OUT_FILE = "C:\\Users\\Administrator\\Documents\\pleiades-2021-12-java-win-64bit-jre_20220106\\pleiades\\workspace\\YDemo\\src\\main\\java\\test\\camel_out.txt";
+public class TestCamelLower {
+	private static final String IN_FILE = "C:\\Users\\Administrator\\Documents\\pleiades-2021-12-java-win-64bit-jre_20220106\\pleiades\\workspace\\YDemo\\src\\main\\java\\test\\camelLower_in.txt";
+	private static final String OUT_FILE = "C:\\Users\\Administrator\\Documents\\pleiades-2021-12-java-win-64bit-jre_20220106\\pleiades\\workspace\\YDemo\\src\\main\\java\\test\\camelLower_out.txt";
 	public static void main(String[] args) throws IOException {
 		File file = new File(IN_FILE);
         Scanner scanner = new Scanner(file);
@@ -21,7 +21,7 @@ public class TestCamel {
         	new java.util.Scanner(System.in).nextLine();
                 while (scanner.hasNextLine()){
             	String line = scanner.nextLine();
-        			 line = line.replaceAll("([a-z0-9]+)([A-Z]+)", "$1_$2").toUpperCase();
+        			 line = line.replaceAll("([a-z0-9]+)([A-Z]+)", "$1_$2").toLowerCase();
                 if (line.equals("##")) {
                     scanner.close();
                     break;
